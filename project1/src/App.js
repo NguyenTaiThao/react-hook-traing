@@ -1,10 +1,15 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+
+/* スタイルシート */
+import './styles/main.css';
+
+/* コンポーネント */
+import Todo from './components/Todo';
 
 function App() {
   return (
-    <div className="App">
-      <h1>Welcome</h1>
+    <div className="container is-fluid">
+      <Todo />
     </div>
   );
 }
