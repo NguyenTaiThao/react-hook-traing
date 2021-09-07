@@ -19,12 +19,9 @@ import useStorage from "../hooks/storage";
 import { getKey } from "../lib/util";
 
 function Todo() {
+  const [items, putItems, clearItems] = useStorage();
+
   const [filter, setFilter] = useState("all");
-  const [items, putItems] = React.useState([
-    { key: getKey(), text: "日本語の宿題", done: false },
-    { key: getKey(), text: "reactを勉強する", done: false },
-    { key: getKey(), text: "明日の準備をする", done: false },
-  ]);
 
   const handleChange = (checkedItem) => {
     const newItems = items.map((ele, index) =>
