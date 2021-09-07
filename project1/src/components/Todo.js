@@ -31,13 +31,18 @@ function Todo() {
         ? { ...checkedItem, done: !checkedItem.done }
         : ele
     );
+    putItems(newItems);
+  };
 
+  const handleAdd = (text) => {
+    const newItems = [...items, { key: getKey(), text: text, done: false }];
     putItems(newItems);
   };
 
   return (
     <div className="panel">
       <div className="panel-heading">ITSS ToDoアプリ</div>
+      <Input onAdd={handleAdd} />
       {items.map((item) => (
         <TodoItem item={item} key={getKey()} onClick={handleChange} />
       ))}
